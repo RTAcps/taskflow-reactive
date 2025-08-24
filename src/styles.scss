@@ -1,1 +1,225 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importação dos módulos do Sass */
+@use "sass:color";
+@use 'assets/styles/primeicons-custom' as *;
+
+/* Base styles - importando via CDN no index.html */
+
+/* Estilos fundamentais para o HTML e body */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+:root {
+  /* Color Variables */
+  --primary-color: #3B82F6;
+  --primary-50: rgba(59, 130, 246, 0.05);
+  --primary-100: rgba(59, 130, 246, 0.1);
+  --primary-200: rgba(59, 130, 246, 0.2);
+  --primary-300: rgba(59, 130, 246, 0.3);
+  --primary-400: rgba(59, 130, 246, 0.4);
+  --primary-500: rgba(59, 130, 246, 0.5);
+  --primary-600: #2563EB;
+  --primary-700: #1D4ED8;
+  --primary-800: #1E40AF;
+  --primary-900: #1E3A8A;
+  
+  --secondary-color: #f50057;
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --border-radius: 4px;
+  --spacing-unit: 8px;
+  
+  /* Surface Colors */
+  --surface-ground: #F8F9FA;
+  --surface-section: #F9FAFB;
+  --surface-card: #FFFFFF;
+  --surface-overlay: #FFFFFF;
+  --surface-border: #E5E7EB;
+  --surface-hover: #F3F4F6;
+
+  /* Text Colors */
+  --text-color-secondary: #6B7280;
+  --text-color-tertiary: #9CA3AF;
+
+  /* State Colors */
+  --success-color: #10B981;
+  --info-color: #06B6D4;
+  --warning-color: #F59E0B;
+  --error-color: #EF4444;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(-1 * var(--spacing-unit));
+}
+
+.col {
+  flex: 1;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Card component */
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: calc(2 * var(--spacing-unit));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+/* Form components */
+.form-group {
+  margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-unit);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: var(--spacing-unit) calc(2 * var(--spacing-unit));
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  
+  &.primary {
+    background-color: var(--primary-color);
+    color: white;
+    
+    &:hover {
+      background-color: color.adjust(#3f51b5, $lightness: -10%);
+    }
+  }
+  
+  &.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+    
+    &:hover {
+      background-color: color.adjust(#f50057, $lightness: -10%);
+    }
+  }
+}
+
+/* List styles */
+.list {
+  list-style: none;
+  
+  &-item {
+    padding: var(--spacing-unit);
+    border-bottom: 1px solid #ddd;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+  border-radius: calc(var(--border-radius) / 2);
+  font-size: 14px;
+  font-weight: 500;
+  
+  &.success {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  &.warning {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  &.error {
+    background-color: #f44336;
+    color: white;
+  }
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.mt-1 { margin-top: var(--spacing-unit); }
+.mt-2 { margin-top: calc(2 * var(--spacing-unit)); }
+
+/* Classes específicas para ícones */
+.pi {
+  font-family: 'PrimeIcons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Alguns ícones comuns utilizados no projeto */
+.pi-user::before { content: "\e7fd"; }
+.pi-users::before { content: "\e7fc"; }
+.pi-comment::before { content: "\e725"; }
+.pi-comments::before { content: "\e726"; }
+.pi-check::before { content: "\e876"; }
+.pi-times::before { content: "\e5cd"; }
+.pi-exclamation-triangle::before { content: "\e645"; }
+.pi-info-circle::before { content: "\e88e"; }
+.pi-calendar::before { content: "\e935"; }
+.pi-clock::before { content: "\e8ae"; }
+.pi-send::before { content: "\e163"; }
+.pi-refresh::before { content: "\e5d5"; }
+.pi-trash::before { content: "\e872"; }
+.mt-3 { margin-top: calc(3 * var(--spacing-unit)); }
+
+.mb-1 { margin-bottom: var(--spacing-unit); }
+.mb-2 { margin-bottom: calc(2 * var(--spacing-unit)); }
+.mb-3 { margin-bottom: calc(3 * var(--spacing-unit)); }
+
+.p-1 { padding: var(--spacing-unit); }
+.p-2 { padding: calc(2 * var(--spacing-unit)); }
+.p-3 { padding: calc(3 * var(--spacing-unit)); }

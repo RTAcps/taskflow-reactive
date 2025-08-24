@@ -1,0 +1,48 @@
+/* Definições específicas para ícones do PrimeIcons */
+
+/* Definição base para todos os ícones */
+.pi {
+  font-family: 'PrimeIcons', Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mapeamento de ícones específicos usados no aplicativo */
+.pi-user:before { content: "\e7fd"; }
+.pi-users:before { content: "\e7fe"; }
+.pi-comment:before { content: "\e725"; }
+.pi-comments:before { content: "\e726"; }
+.pi-check:before { content: "\e876"; }
+.pi-check-circle:before { content: "\e877"; }
+.pi-times:before { content: "\e5cd"; }
+.pi-times-circle:before { content: "\e888"; }
+.pi-plus:before { content: "\e8a9"; }
+.pi-plus-circle:before { content: "\e8a1"; }
+.pi-minus:before { content: "\e8aa"; }
+.pi-minus-circle:before { content: "\e8a2"; }
+.pi-exclamation-triangle:before { content: "\e645"; }
+.pi-info-circle:before { content: "\e88e"; }
+.pi-calendar:before { content: "\e935"; }
+.pi-clock:before { content: "\e8ae"; }
+.pi-send:before { content: "\e163"; }
+.pi-refresh:before { content: "\e5d5"; }
+.pi-trash:before { content: "\e872"; }
+.pi-pencil:before { content: "\e3c9"; }
+.pi-chart-line:before { content: "\e922"; }
+.pi-sign-in:before { content: "\e897"; }
+.pi-sign-out:before { content: "\e898"; }
+.pi-bell:before { content: "\e7f4"; }
+.pi-arrows-h:before { content: "\e60d"; }
+.pi-user-plus:before { content: "\e7fe"; }
