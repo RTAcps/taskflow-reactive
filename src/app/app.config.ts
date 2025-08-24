@@ -1,11 +1,13 @@
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { routes } from './app.routes';
 
-export const appRectiveConfig: ApplicationConfig = {
+export const appReactiveConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
-    provideAnimations()
+    provideRouter(routes, withComponentInputBinding()),
+    provideAnimations(),
+    provideHttpClient(withFetch())
   ]
 };
