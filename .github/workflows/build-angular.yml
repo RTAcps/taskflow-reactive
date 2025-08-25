@@ -34,7 +34,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Angular app
-        run: pnpm run build --if-present
+        run: pnpm run build
 
       - name: List dist files
         run: ls -la dist/
