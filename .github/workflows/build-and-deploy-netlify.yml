@@ -1,4 +1,4 @@
-name: Build Angular App
+name: Build and Deploy to Netlify
 
 on:
   push:
