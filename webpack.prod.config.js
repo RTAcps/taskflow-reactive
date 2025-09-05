@@ -4,6 +4,8 @@ const baseConfig = withModuleFederationPlugin({
   name: 'taskflow-reactive',
   filename: 'remoteEntry.js',
   exposes: {
+    './Module': './src/app/app.component.ts',
+    './Routes': './src/app/app.routes.ts',
     './RealTimeCollaborationComponent': './src/app/features/realtime-collaboration/realtime-collaboration.component.ts',
     './ReactiveRootComponent': './src/app/app.component.ts'
   },
