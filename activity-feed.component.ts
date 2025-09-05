@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import { ProjectActivity } from '../../models/collaboration.model';
-import { ActivityStreamService } from '../../services/activity-stream.service';
+import { ProjectActivity } from './src/app/models/collaboration.model';
+import { ActivityStreamService } from './src/app/services/activity-stream.service';
 
 @Component({
   selector: 'app-activity-feed',
